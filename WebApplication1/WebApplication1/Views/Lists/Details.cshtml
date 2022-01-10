@@ -1,0 +1,59 @@
+﻿@model WebApplication1.List
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p> </p>
+
+<h2>報修細項</h2>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            維修項目
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.State)*@
+            是否完成
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.CreateTime)*@
+            建立日期
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ModifyTime)*@
+            需完成日期
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("編輯", "Edit", new { id = Model.SN }, new { style = "color:white" }) </button>|
+    @*@Html.ActionLink("反回列表", "Index")*@
+    <button type="button" class="btn btn-info">@Html.ActionLink("返回", "Index", null, new { style = "color:white" })</button>
+</p>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebApplication1.List>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p> </p>
+<h2>報修列表</h2>
+
+<p>
+    <button type="button" class="btn btn-success">@Html.ActionLink("新增項目", "Create", null ,new { style = "color:white" } )</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            維修項目
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.State)*@
+            是否完成
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CreateTime)*@
+            建立日期
+        </th>
+        
+        <th>
+            @*@Html.DisplayNameFor(model => model.ModifyTime)*@
+            需完成日期
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @*@Html.DisplayFor(modelItem => item.State)*@
+        @{ 
+            if (item.State)
+            {
+        <span class="badge badge-light">完成</span>
+            }
+            else
+            {
+        <span class="badge badge-dark">未完成</span>
+                }
+            }
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreateTime)
+    </td>
+     <td>
+        @Html.DisplayFor(modelItem => item.ModifyTime)
+     </td>
+        
+            <td>
+                <button type="button" class="btn btn-secondary">@Html.ActionLink("編輯", "Edit", new { id = item.SN }, new { style = "color:white" })</button> |
+                <button type="button" class="btn btn-primary">@Html.ActionLink("細項", "Details", new { id = item.SN }, new { style = "color:white" }) </button>|
+                <button type="button" class="btn btn-danger"> @Html.ActionLink("刪除", "Delete", new { id = item.SN }, new { style = "color:white" })</button>
+            </td>
+       </tr>
+    }
+
+    </table>

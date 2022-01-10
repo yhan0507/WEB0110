@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">維護及修繕系統</h1>
+    <p class="lead">這是個申報維護及修繕系統，各項維修都需要時間，我們會盡量以最快速度滿足您的需求</p>
+    <hr class="my-4">
+    <p>以下將進入系統列表</p>
+    @Html.ActionLink("進入報修列表", "Index", "Lists")
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>聯絡方式</h2>
+        <p>
+            <a class="btn btn-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                請點選
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>
+                    負責人：陳宇漢
+                </p>
+                <p>
+                    學號：S07353043
+                </p>
+                <p>
+                    TEL：09-********
+                </p>
+                <p>
+                    地址：#$市%%區&^路19巷
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>本系統使用方法</h2>
+        <p>
+            <a class="btn btn-light" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                使用說明
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+                <p>
+                    點選上面"進入報修列表"後左上方有"新增報修"，如在登記報修中有錯誤皆可以在修改系統中做調整，刪除或編輯請小心使用，如有需求請洽負責人。
+                </p>
+                
+            </div>
+        </div>
+    </div>
+
+
+</div>

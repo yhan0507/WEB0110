@@ -1,0 +1,65 @@
+﻿@model WebApplication1.List
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p> </p>
+<h2>刪除項目</h2>
+
+
+<div class="alert alert-danger" role="alert">
+   刪除後內容將消失！！！
+</div>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            維修項目
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.State)*@
+            是否完成
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.CreateTime)*@
+            建立日期
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+        
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ModifyTime)*@
+            需完成日期
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyTime)
+        </dd>
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="刪除" class="btn btn-danger" /> |
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <button type="button" class="btn btn-info">@Html.ActionLink("返回", "Index", null, new { style = "color:white" })</button>
+</div>
+    }
+</div>
